@@ -1,0 +1,444 @@
+:root {
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+}
+
+
+.box-video {    
+    position: absolute ;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.box-video video {
+    object-fit: cover; /* <-- Aqui está o detalhe! */
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    /* background: rgba(11, 16, 27, 0.75); */
+    /* padding: 20px 0; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Garante que a faixa vá de ponta a ponta */
+    z-index: 10; /* Mantém o menu clicável acima de tudo */
+    /* Cor escura semitransparente (ajuste a opacidade 0.55 conforme necessário) */
+    /* Preto profundo sólido (combina melhor com telas que preto puro #000) */
+    background: #090D16; 
+  
+    /* Linha inferior muito sutil para separar do vídeo sem pesar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* Linha inferior muito sutil para separar do vídeo sem pesar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+
+}
+
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-header .logo-header {
+    height: 100px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #F8FAFC;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 0 20px;
+    transition: color 0.2s ease;
+}
+
+/* Hover combinando com o azul do seu título e botão */
+.navbar a:hover {
+  color: #38BDF8; 
+}
+
+.hero-section {
+    min-height: 100vh; /* Pega 100% da altura visível da tela */
+    width: 100%;
+    padding-top: 80px; /* Compensa a altura do header fixo para não cobrir seu conteúdo */
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.55); /* Voltei a transparência para o blur funcionar */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(18px);
+
+    /* Gradiente suave: mais claro no topo (para ver o vídeo) e escuro na base */
+    background: linear-gradient(
+        180deg,
+        rgba(10, 10, 10, 0.35) 0%,   /* Topo leve para destacar o vídeo e o header */
+        rgba(10, 10, 10, 0.55) 50%,  /* Meio equilibrado para leitura do título Geist */
+        #0a0a0a 100%                 /* Base sólida para fundir com o resto do site */
+    );
+}
+
+.hero-box-img {
+    position: relative; /* Referência para o glow ficar preso atrás da foto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+/* O efeito Glow atrás da imagem */
+.hero-box-img::before {
+    content: "";
+    position: absolute;
+    width: 300px;  /* Quase do tamanho da imagem */
+    height: 300px;
+    border-radius: 50%;
+    
+    /* Escolha a cor do brilho (ex: azul tech + roxo sutil) */
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    
+    filter: blur(55px); /* Espalha a luz suavemente */
+    opacity: 0.45;      /* Deixa o brilho leve e elegante (ajuste entre 0.3 e 0.6) */
+    z-index: 0;         /* Fica atrás da imagem */
+    pointer-events: none;
+}
+
+.img-hero {
+    position: relative;
+    z-index: 1; /* Garante que sua foto fique na frente do glow */
+    height: 320px;
+    width: 320px; /* Garante que fique um círculo perfeito mesmo se a foto não for quadrada */
+    
+    border-radius: 50%;
+
+    object-fit: cover;      /* Evita que a imagem fique esticada ou achatada */
+    object-position: top;   /* Alinha o foco no topo da imagem, salvando a cabeça */
+    
+    /* Opcional: borda sutil estilo vidro para dar acabamento */
+    /* border: 1px solid rgba(255, 255, 255, 0.15); */
+}
+
+.hero-text h1 {
+    color: #818CF8;
+    font-size: 50px;
+}
+
+.hero-text h2 {
+    color: #D1D5DB;
+    font-size: 40px;
+}
+
+.hero-text span {
+    color: #858d99;
+}
+
+.hero-text h2 span {
+    display: block; /* Força "interfaces claras." a descer para a linha de baixo */
+}
+
+.hero-btn {
+    margin: 20px 0;
+}
+
+.btn-projetos {
+    background: #38BDF8;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.btn-github {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    
+}
+
+.section-sobre {
+    background: #0A0A0A;
+    background: #0A0A0A;
+    padding: 80px 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Mesmo espaçamento entre os cards de Projetos */
+}
+
+/* Faz a div do título ocupar a linha inteira no topo */
+.section-sobre > div:first-child {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.section-sobre h3, .section-projetos h3 {
+    color: #D1D5DB;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.section-sobre p {
+    color: #D1D5DB;
+}
+
+.section-sobre-box, 
+.section-sobre-stack {
+    flex: 1;
+    max-width: 590px; /* Alinha exatamente com a largura de 2 cards de Projetos */
+    min-width: 300px;
+    min-height: 150px; /* Dá uma altura mais encorpada aos cards */
+    min-width: 280px; /* Faz quebrar uma embaixo da outra automaticamente no celular */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #090D16;
+    border-radius: 12px;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Centraliza o texto verticalmente no card */
+}
+
+/* ================= PROJETOS ================= */
+.section-projetos {
+    background: #0A0A0A;
+    padding: 60px 20px;
+}
+
+.section-projetos .container-lista {
+    max-width: 1200px; /* Mesma largura total da seção Sobre */
+    margin: 0 auto;
+    color: #FFFFFF;
+    display: grid; /* <-- Faltava essa linha para colocar em 2 colunas */
+    grid-template-columns: repeat(auto-fit, 285px);
+    justify-content: center; /* Centraliza os cards no meio independente da quantidade */
+    gap: 20px;
+    min-height: 260px; /* Mantém a altura fixa da seção (2 linhas de 230px + 24px de gap) para a paginação não pular */
+    /* align-content: start; */
+}
+
+.container-lista .card-projeto {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #090D16;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.card-projeto h4 {
+    font-size: 25px;
+}
+
+.links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: auto; /* Empurra os botões sempre para a base do card */
+}
+
+.links a {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.12);
+    color: #38BDF8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.links a:hover {
+    background: #38BDF8;
+    color: #090D16;
+}
+
+.card-projeto h4 {
+    color: #F8FAFC;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.card-projeto p {
+    color: #94A3B8;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 28px; /* Espaçamento generoso entre o texto e os botões */
+}
+
+.card-projeto {
+    background: #090D16;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    height: 230px; /* Trava a altura exata de todos os cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Efeito sutil ao passar o mouse */
+.card-projeto:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+}
+
+/* ================= PAGINAÇÃO ================= */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 36px;
+}
+
+.btn-pagina {
+    background: #090D16;
+    color: #D1D5DB;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-pagina:hover {
+    border-color: #38BDF8;
+    color: #38BDF8;
+}
+
+.btn-pagina.ativo {
+    background: #38BDF8;
+    color: #090D16;
+    border-color: #38BDF8;
+}
+/* Final Paginação */
+
+/* ================= CONTATO & FOOTER ================= */
+.section-contato {
+    background: #0A0A0A;
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-contato h4 {
+    color: #F8FAFC;
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+.section-cards-redes {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.section-cards-redes a {
+    color: #D1D5DB;
+    background: #090D16;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;   /* Alinha ícone e texto */
+    align-items: center;
+    gap: 8px;               /* Espaço entre o ícone e a palavra */
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.section-cards-redes a i {
+    font-size: 18px;        /* Tamanho do ícone */
+}
+
+.section-cards-redes a:hover {
+    border-color: #38BDF8;
+    color: #38BDF8;
+}
+
+.footer {
+    background: #090D16;
+    color: #64748B;
+    text-align: center;
+    padding: 36px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 14px;
+}
+
+.footer small {
+    font-size: 15px;    /* Aumenta o tamanho da linha "Desenvolvido por..." */
+    color: #64748B;
+}
+
+.footer span {
+    position: relative;
+    color: #F8FAFC;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Linha animada que cresce da esquerda para a direita */
+.footer span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #38BDF8;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.footer span:hover {
+    color: #38BDF8;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+.footer span:hover::after {
+    width: 100%;
+}
+
+/* No celular, quebra para 1 card por linha */
+@media (max-width: 768px) {
+    .container-lista {
+        grid-template-columns: 1fr;
+    }
+}
