@@ -16,6 +16,9 @@ body {
   height: 100vh;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 .box-video {    
     position: absolute ;
@@ -177,6 +180,10 @@ body {
     font-weight: 600;
     padding: 10px;
     
+}
+
+section {
+    scroll-margin-top: 100px;
 }
 
 .section-sobre {
