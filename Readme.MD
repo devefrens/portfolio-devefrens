@@ -73,12 +73,12 @@ Este repositório contém o código-fonte do meu portfólio profissional, desenv
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/devefrens/portfolio-devefrens.git
    ```
 
 2. **Acesse a pasta do projeto:**
    ```bash
-   cd portfolio
+   cd portfolio-devefrens
    ```
 
 3. **Execute no navegador:**
