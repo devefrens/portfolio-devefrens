@@ -4,7 +4,7 @@
 
 Este repositório contém o código-fonte do meu portfólio profissional, desenvolvido para apresentar minha trajetória, minha stack de tecnologias e os principais projetos que venho construindo na área de desenvolvimento web.
 
-🔗 **Acesse o projeto online:** [https://portfolio-devefrens.vercel.app](https://vercel.app) *(atualize com seu link após o deploy)*
+🔗 **Acesse o projeto online:** [https://portfolio-devefrens.vercel.app](https://vercel.app)
 
 ---
 
