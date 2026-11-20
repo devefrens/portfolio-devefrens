@@ -30,18 +30,41 @@ Este repositório contém o código-fonte do meu portfólio profissional, desenv
 
 ## 📂 Estrutura do Projeto
 
-```text
-📁 portfolio
+```
+📁 portfolio-devefrens
  ┣ 📁 assets
  ┃ ┣ 📁 favicon
+ ┃ ┃ ┗ 📄 favicon.png
  ┃ ┣ 📁 img
+ ┃ ┃ ┣ 📄 img-hero-VF3.png
+ ┃ ┃ ┗ 📄 logo-devefrens-v5.png
  ┃ ┗ 📁 video
+ ┃   ┗ 📄 video_tech.mp4
  ┣ 📁 js
  ┃ ┗ 📄 script.js
  ┣ 📁 style
- ┃ ┗ 📄 style.css
+ ┃ ┣ 📁 base
+ ┃ ┃ ┣ 📄 variables.css
+ ┃ ┃ ┣ 📄 reset.css
+ ┃ ┃ ┗ 📄 global.css
+ ┃ ┣ 📁 layout
+ ┃ ┃ ┣ 📄 background.css
+ ┃ ┃ ┣ 📄 header.css
+ ┃ ┃ ┗ 📄 footer.css
+ ┃ ┣ 📁 components
+ ┃ ┃ ┣ 📄 buttons.css
+ ┃ ┃ ┣ 📄 cards.css
+ ┃ ┃ ┗ 📄 pagination.css
+ ┃ ┣ 📁 sections
+ ┃ ┃ ┣ 📄 hero.css
+ ┃ ┃ ┣ 📄 sobre.css
+ ┃ ┃ ┣ 📄 projetos.css
+ ┃ ┃ ┗ 📄 contato.css
+ ┃ ┣ 📄 main.css
+ ┃ ┗ 📄 responsive.css
  ┣ 📄 index.html
  ┗ 📄 README.md
+```
 ```
 
 ---
