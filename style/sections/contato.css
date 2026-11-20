@@ -12,10 +12,10 @@
 }
 
 .section-cards-redes {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 160px);
     justify-content: center;
     gap: 16px;
-    flex-wrap: wrap;
 }
 
 .section-cards-redes a {
@@ -27,6 +27,7 @@
     text-decoration: none;
     font-weight: 500;
     display: inline-flex;
+    justify-content: center; /* centraliza ícone + texto dentro do botão */
     align-items: center;
     gap: 8px;
     transition: border-color 0.2s ease, color 0.2s ease;

@@ -17,6 +17,11 @@
     color: var(--color-text-muted);
 }
 
+.section-sobre-box p,
+.section-sobre-stack p {
+    width: 100%;
+}
+
 .section-sobre-box,
 .section-sobre-stack {
     flex: 1;

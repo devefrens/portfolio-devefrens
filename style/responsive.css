@@ -88,6 +88,14 @@
         padding: 0 20px;
     }
 
+    .hero-section {
+        flex-direction: column-reverse;
+        justify-content: center; /* agrupa foto + texto no centro, respeitando o gap */
+        text-align: center;
+        gap: 32px;
+        padding: 120px 20px 40px;
+    }
+
     .menu-toggle { display: block; }
 
     .navbar {
@@ -109,6 +117,13 @@
         display: block;
         margin: 0;
         padding: 14px 0;
+    }
+
+    /* Contato: 2 botões por linha, todos do mesmo tamanho */
+    .section-cards-redes {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 360px;
+        margin: 0 auto;
     }
 }
 /*  ===================================================== */
