@@ -1,0 +1,42 @@
+.section-contato {
+    background: var(--color-bg);
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+.section-contato h4 {
+    color: var(--color-text);
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+.section-cards-redes {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.section-cards-redes a {
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.section-cards-redes a i {
+    font-size: 18px;
+}
+
+.section-cards-redes a:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}

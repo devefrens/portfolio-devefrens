@@ -1,0 +1,24 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+/* Compensa o header fixo ao navegar pelas âncoras */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Títulos de seção (Sobre e Projetos).
+   Futuro: criar uma classe .section-title e aplicar no HTML. */
+.section-sobre h3,
+.section-projetos h3 {
+    color: var(--color-text-muted);
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 32px;
+}

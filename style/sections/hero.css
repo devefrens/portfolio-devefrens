@@ -1,0 +1,75 @@
+.hero-section {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 80px; /* Compensa a altura do header fixo */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Gradiente: mais claro no topo (vídeo visível) e sólido na base */
+    background: linear-gradient(
+        180deg,
+        rgba(10, 10, 10, 0.35) 0%,
+        rgba(10, 10, 10, 0.55) 50%,
+        #0a0a0a 100%
+    );
+}
+
+/* ===== TEXTO ===== */
+.hero-text h1 {
+    color: var(--color-accent);
+    font-size: 50px;
+}
+
+.hero-text h2 {
+    color: var(--color-text-muted);
+    font-size: 40px;
+}
+
+.hero-text span {
+    color: #858d99;
+}
+
+.hero-text h2 span {
+    display: block; /* "Interfaces claras" desce para a linha de baixo */
+}
+
+.hero-btn {
+    margin: 20px 0;
+}
+
+/* ===== IMAGEM ===== */
+.hero-box-img {
+    position: relative; /* Referência para o glow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glow atrás da imagem */
+.hero-box-img::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    filter: blur(55px);
+    opacity: 0.45;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.img-hero {
+    position: relative;
+    z-index: 1; /* Foto na frente do glow */
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}

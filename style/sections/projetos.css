@@ -1,0 +1,15 @@
+.section-projetos {
+    background: var(--color-bg);
+    padding: 60px 20px;
+}
+
+.section-projetos .container-lista {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 285px);
+    justify-content: center;
+    gap: 20px;
+    min-height: 260px; /* Evita que a paginação "pule" */
+}

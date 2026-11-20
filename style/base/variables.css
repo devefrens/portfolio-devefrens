@@ -1,0 +1,23 @@
+:root {
+    /* Fontes */
+    --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Geist Mono', monospace;
+
+    /* Cores */
+    --color-primary: #38BDF8;
+    --color-accent: #818CF8;
+    --color-bg: #0A0A0A;
+    --color-surface: #090D16;
+    --color-text: #F8FAFC;
+    --color-text-muted: #D1D5DB;
+    --color-text-subtle: #94A3B8;
+    --color-text-dim: #64748B;
+
+    /* Bordas */
+    --color-border: rgba(255, 255, 255, 0.15);
+    --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+    /* Forma */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+}

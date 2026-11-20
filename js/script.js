@@ -49,21 +49,6 @@ const projetos = [
   }
 ];
 
-// containerLista.innerHTML = projetos.map((projeto) => `    
-//     <article class="card-projeto">
-//         <h4>${projeto.titulo}</h4>
-//         <p>${projeto.descricao}</p>
-//         <div class="links">
-//             <a href="${projeto.githubUrl}" target="_blank">Ver Projeto no GitHub</a>
-//             ${
-//             projeto.deployUrl
-//                 ? `<a href="${projeto.deployUrl}" target="_blank">Ver Projeto</a>`
-//                 : ""
-//             }
-//         </div>
-//     </article>
-// `).join(''); // <-- Adicione isso aqui
-
 // Cria o contêiner da paginação via JS
 const paginacaoContainer = document.createElement('div');
 paginacaoContainer.className = 'paginacao';
@@ -124,3 +109,32 @@ window.mudarPagina = function(novaPagina) {
 
 // Inicializa na página 1
 renderizarProjetos(paginaAtual);
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+
+if (menuToggle && navbar) {
+    const icone = menuToggle.querySelector('i');
+
+    function fecharMenu() {
+        navbar.classList.remove('aberto');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        icone.className = 'bi bi-list';
+    }
+
+    menuToggle.addEventListener('click', () => {
+        const aberto = navbar.classList.toggle('aberto');
+        menuToggle.setAttribute('aria-expanded', aberto);
+        icone.className = aberto ? 'bi bi-x-lg' : 'bi bi-list';
+    });
+
+    // Fecha ao clicar em um link
+    navbar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', fecharMenu);
+    });
+
+    // Fecha se a tela voltar para desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) fecharMenu();
+    });
+}
